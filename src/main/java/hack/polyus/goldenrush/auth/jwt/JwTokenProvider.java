@@ -38,10 +38,10 @@ public class JwTokenProvider {
         this.userDetailsService = userDetailsService;
     }
 
-    public String createAccessToken(String email, String role, Long organisationId){
+    public String createAccessToken(String email, String role, Long userId){
         Claims claims = Jwts.claims().setSubject(email);
         claims.put("role", role);
-        claims.put("organisation", organisationId);
+        claims.put("userId", userId);
         Date now = new Date();
         Date validity = new Date(now.getTime() + accessValidity * 1000);
 

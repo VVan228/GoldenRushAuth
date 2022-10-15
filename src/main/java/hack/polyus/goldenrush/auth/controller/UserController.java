@@ -30,7 +30,7 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(
-            value = "/users/save/teacher",
+            value = "/user/save",
             consumes = "application/json",
             method = RequestMethod.POST
     )
